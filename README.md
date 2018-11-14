@@ -9,15 +9,6 @@ and I use Visual Studio Code for Salesforce development.
 
 ```
 
-##Vim
-![Vim](https://raw.githubusercontent.com/antwonlee/dotfiles/master/images/vim_base16.png)
-
-##iTerm & Tmux
-![iterm](https://raw.githubusercontent.com/antwonlee/dotfiles/master/images/iterm_base16_2.png)
-
-##Visual Studio Code
-![VisualStudioCodeEditor](https://raw.githubusercontent.com/antwonlee/dotfiles/dd291a162d2a18ede3822909a830c7dd8de2d98c/images/vsc.jpg)
-
 ---
 
 ##### Installation
@@ -31,7 +22,7 @@ and I use Visual Studio Code for Salesforce development.
 Clone repo to your desired directory:
 
 ```bash
-git clone git@github.com:antwonlee/dotfiles.git
+git clone git@github.com:booomch/dotfiles.git
 ```
 
 Link your .vimrc accordingly:
