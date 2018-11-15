@@ -25,6 +25,7 @@ alias dt="cd ~/Desktop"
 alias ds="cd ~/Sites"
 alias gc="git commit -m"
 alias ga="git add ."
+alias gp="git push"
 alias gcache='git rm -r --cached .'
 alias gclean='git remote prune origin'
 alias gcommit="git commit"
