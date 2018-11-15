@@ -1,39 +1,19 @@
 export TERM=xterm-256color
 
 # User configuration
-plugins=(git)
 stty start undef
 stty stop undef
 
 # Path to your oh-my-zsh installation.
 export EDITOR='vim'
 
-# ZSH_THEME="wild-cherry"
- ZSH_THEME="refined"
-
 # Graduate School
 alias csphotography="cd ~/Sites/gatech/cs6475/Assignments"
 alias connecttoml="ssh -X alee354@buffet02.cc.gatech.edu"
 alias gitpushboth="git push -u gatech master && git push -u origin master"
 
-# Macbook Pro
-alias ajl="cd ~/Sites/artandjustice.development/artandjustice"
-alias anthonyleeio="cd ~/Sites/github.pages/antwonlee.github.io"
-alias dotfiles="cd ~/Sites/dotfiles"
-alias gatech="cd ~/Documents/gatech"
-alias js="cd ~/Sites/_playgrounds/javascript-playground/"
-alias luna="cd ~/Sites/rubyonrails.development/lunamisoo"
-alias ml="cd ~/Sites/machinelearning.development/"
-alias playground="cd ~/Sites/_playgrounds"
-alias pluralsight="cd ~/Pluralsight"
-alias ror="cd ~/Sites/rubyonrails.development/"
-alias thrive="cd ~/Sites/thrive.development/thriveministry"
-alias upcase="cd ~/Sites/upcase.trails"
-
 # iMac
-alias alongside="cd ~/Sites/alongside"
 alias fixssh='eval $(ssh-agent) & ssh-add'
-alias thriveimac="cd ~/Sites/thriveministry"
 
 # Everday Stuff
 alias ag='ag --path-to-ignore ~/.agignore'
@@ -44,6 +24,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias ds="cd ~/Sites"
 alias gc="git commit -m"
+alias ga="git add ."
 alias gcache='git rm -r --cached .'
 alias gclean='git remote prune origin'
 alias gcommit="git commit"
@@ -57,7 +38,6 @@ alias grename="git branch -m"
 alias greset="git reset --hard HEAD~1"
 alias gresettoremote="git reset --hard origin/master"
 alias gshortcuts='vi ~/.oh-my-zsh/plugins/git/git.plugin.zsh'
-alias havingfun="osascript -e 'Set Volume 10' && say -v 'good news' it is time for lunch"
 alias list="ls -a"
 alias newbranch="git checkout -b"
 alias repo="hub browse"
@@ -74,7 +54,6 @@ alias settings='vi ~/.zshrc'
 alias snippets='cd ~/.vim/bundle/vim-snippets/snippets'
 alias sourcezshrc='source ~/.zshrc'
 alias sourcevimrc='source ~/.vimrc'
-alias starthttp='python3 -m http.server'
 alias tellmeyoursecret='cat ~/.ssh/id_rsa.pub'
 alias u='..'
 alias uohmyzsh='upgrade_oh_my_zsh'
@@ -105,8 +84,6 @@ alias herokulunamisoo='heroku apps --org lunamisoo'
 alias ha='heroku accounts'
 alias haccountset='heroku accounts:set'
 alias haddremote='heroku git:remote -a'
-alias herokuelixir='heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"'
-alias herokuphoenix='heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git'
 alias hc='heroku create'
 alias hcheck='curl https://status.heroku.com/api/v3/current-status.json'
 alias hconfig='heroku config'
@@ -133,16 +110,6 @@ alias hstaging='git push staging master'
 alias productionhmon='heroku maintenance:on --app'
 alias productionhmoff='heroku maintenance:off --app'
 
-# Gatsby
-alias gsby='gatsby'
-alias gsbyd='gatsby develop'
-
-# Hugo
-alias hugoserver='hugo server -D'
-
-# Jekyll
-alias jserve='jekyll serve'
-
 # NPM
 alias npmis='npm install --save'
 alias npmisd='npm install --save-dev'
@@ -150,71 +117,6 @@ alias npmbootstrap='npm install bootstrap'
 alias npmgulp="sudo npm install -g gulp"
 alias npmgulpl="npm install --save-dev gulp"
 alias npmi="npm init"
-
-# Elixir and Phoenix
-alias mixdatabase='mix ecto.create && mix ecto.migrate'
-alias mixnew='mix phoenix.new'
-alias mixserver='mix phoenix.server'
-alias mixdigest='mix phoenix.digest'
-alias iexmix='iex -S mix'
-
-# Jupyter
-alias jnotebook='jupyter notebook'
-
-# Pry
-alias pryrails="pry -r ./config/environment"
-
-# Python
-alias p3='python3'
-# -- Django
-alias djangocreate="django-admin startproject"
-
-# Rails
-alias bi='bundle install'
-alias binstallrspec='bin/rails generate rspec:install'
-alias biwp='bundle install --without production'
-alias brspec='bundle binstubs rspec-core'
-alias be='bundle exec'
-alias bu='bundle update'
-alias checkgems='bundle-audit update'
-alias installrspec='rails generate rspec:install'
-alias rakecompile='RAILS_ENV=production bundle exec rake assets:precompile'
-alias rakeclean='rake assets:clean'
-alias rakehardclean='rake assets:clobber'
-alias rcompile='RAILS_ENV=production bundle exec rake assets:precompile'
-alias rreset='rails db:migrate:reset'
-
-alias rmigrate='rails db:migrate'
-alias rmigratetest='rails db:migrate RAILS_ENV=test'
-alias migrate='rails db:migrate'
-alias migratetest='rails db:migrate RAILS_ENV=test'
-
-alias rzero='rails db:migrate VERSION=0'
-
-alias rstatus='rails db:migrate:status'
-alias status='rails db:migrate:status'
-alias rst='rails db:migrate:status'
-
-alias rrollback='rails db:rollback'
-alias rollback='rails db:rollback'
-
-alias rr='rails routes'
-alias routes='rails routes'
-alias rconsole='rails console --sandbox'
-alias rd='rails destroy'
-alias rdc='rails destroy controller'
-alias rdm='rails destroy migration'
-alias rds='rails destroy scaffold'
-alias rg='rails generate'
-alias rgc='rails generate controller'
-alias rgm='rails generate migration'
-alias rgs='rails generate scaffold'
-alias rgrc="rails generate react:component"
-alias rn='rails new'
-alias rs='rails s'
-alias sidekiq='bundle exec sidekiq'
-alias taillogs='tail -f log/development.log'
-alias taillogssalesforce='tail -f log/restforce.log'
 
 # React
 alias cra="create-react-app"
@@ -229,11 +131,6 @@ alias createreactnative="create-react-native-app"
 alias redis='redis-cli'
 alias rediss='redis-server'
 
-# Salesforce DX
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ; }
-alias sf="sfdx"
-alias sfcreateproject="sfdx force:project:create -n"
-
 # Tmux Session Start
 alias tmx="tmux new -s"
 alias tmxc="vim ~/.tmux.conf"
@@ -247,11 +144,6 @@ alias tmxo='tmuxinator open'
 alias tmxs='tmuxinator start'
 alias tmxthrive='tmuxinator start Thrive'
 
-# Vagrant for Georgia Tech
-alias vup='vagrant up'
-alias vhalt='vagrant halt'
-alias vssh='vagrant ssh'
-
 # Yarn
 alias yga='yarn global add'
 
@@ -260,16 +152,8 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 export PATH="$(brew --prefix)/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/.go
-export PYENV_ROOT=/usr/local/opt/pyenv
-export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-source $ZSH/oh-my-zsh.sh
-source /Users/anthonylee/Sites/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
