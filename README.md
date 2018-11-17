@@ -3,7 +3,6 @@ My dotfiles
 
 ```
 These are my dotfiles.  It's not perfect and it will continue to evolve.
-
 ```
 
 ---
