@@ -1,0 +1,18 @@
+<% projectName = @args[0] %>
+<% lang = @args[1] %>
+
+name: frontend <%= projectName %> 
+root: ~/work/<%= projectName %>
+
+startup_window: editor
+
+windows:
+  - editor: 
+      layout: f98d,230x59,0,0[230x40,0,0,0,230x18,0,41,4] 
+      panes:
+        - $EDITOR
+  <% if lang == "react" %>
+        - npm install && npm start
+  <% else  %>
+        - #empty
+  <% end %>

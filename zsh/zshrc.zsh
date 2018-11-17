@@ -5,18 +5,20 @@ stty start undef
 stty stop undef
 
 # Path to your oh-my-zsh installation.
-export EDITOR='vim'
+export EDITOR='nvim'
+export TMUXINATOR_CONFIG='work/dotfiles/tmuxinator'
 
 # Graduate School
 alias csphotography="cd ~/Sites/gatech/cs6475/Assignments"
 alias connecttoml="ssh -X alee354@buffet02.cc.gatech.edu"
 alias gitpushboth="git push -u gatech master && git push -u origin master"
 
-# iMac
-alias fixssh='eval $(ssh-agent) & ssh-add'
-
+# ZSH Commands
+alias szsh='source ~/.zshrc' 
+alias vzsh='vim $ZSH_CUSTOM/zshrc.zsh'
 # Everday Stuff
 alias ag='ag --path-to-ignore ~/.agignore'
+alias mux="tmuxinator"
 alias copymysshkey='pbcopy < ~/.ssh/id_rsa.pub'
 alias deletebranch="git branch -d"
 alias deleteremotebranch="git push -u origin"
