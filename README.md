@@ -4,9 +4,6 @@ My dotfiles
 ```
 These are my dotfiles.  It's not perfect and it will continue to evolve.
 
-I use iTerm, Tmux and Vim for most of my software development,
-and I use Visual Studio Code for Salesforce development.
-
 ```
 
 ---
