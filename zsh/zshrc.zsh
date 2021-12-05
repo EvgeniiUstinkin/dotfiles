@@ -5,29 +5,48 @@ stty start undef
 stty stop undef
 
 # Path to your oh-my-zsh installation.
-export EDITOR='nvim'
+export EDITOR='vim'
 export TMUXINATOR_CONFIG='work/dotfiles/tmuxinator'
 
-# Graduate School
-alias csphotography="cd ~/Sites/gatech/cs6475/Assignments"
-alias connecttoml="ssh -X alee354@buffet02.cc.gatech.edu"
-alias gitpushboth="git push -u gatech master && git push -u origin master"
+export PATH=~/.local/bin:$PATH
+export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export REACT_EDITOR=atom
+export GOPATH=~/work
+export GOBIN=$GOPATH/bin
+export GOEXE=$GOPATH/bin
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# MY OWN COMMANDS
+alias ctl='sh ./ctl.sh'
+
+
 
 # ZSH Commands
 alias szsh='source ~/.zshrc' 
-alias vzsh='vim $ZSH_CUSTOM/zshrc.zsh'
+alias vzsh='$EDITOR $ZSH_CUSTOM/zshrc.zsh'
 # Everday Stuff
 alias ag='ag --path-to-ignore ~/.agignore'
 alias mux="tmuxinator"
+alias sls="serverless"
+alias slsd="serverless deploy -v"
+alias slsmd="make clean;make;slsd"
+alias gr="go run"
+alias grm="go run main.go"
+alias gb="go build"
 alias copymysshkey='pbcopy < ~/.ssh/id_rsa.pub'
 alias deletebranch="git branch -d"
 alias deleteremotebranch="git push -u origin"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias ds="cd ~/Sites"
+alias deploy="npm run deploy"
+alias start="npm run start"
 alias gc="git commit -m"
 alias ga="git add ."
 alias gp="git push"
+alias gpdev="gp origin-aws HEAD:develop"
 alias gcache='git rm -r --cached .'
 alias gclean='git remote prune origin'
 alias gcommit="git commit"
@@ -158,5 +177,3 @@ export PATH="$(brew --prefix)/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH="$HOME/.npm-packages/bin:$PATH"
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
