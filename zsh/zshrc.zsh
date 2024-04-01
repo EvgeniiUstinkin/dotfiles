@@ -17,40 +17,32 @@ export GOEXE=$GOPATH/bin
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOROOT/bin
+
 
 # MY OWN COMMANDS
 alias ctl='sh ./ctl.sh'
-
+alias gcloud='~/work/google-cloud-sdk/bin/gcloud'
 
 
 # ZSH Commands
 alias szsh='source ~/.zshrc' 
 alias vzsh='$EDITOR $ZSH_CUSTOM/zshrc.zsh'
+alias klogs='kubectl logs'
 # Everday Stuff
-alias ag='ag --path-to-ignore ~/.agignore'
-alias mux="tmuxinator"
+
 alias sls="serverless"
 alias slsd="serverless deploy -v"
-alias slsmd="make clean;make;slsd"
-alias gr="go run"
-alias grm="go run main.go"
-alias gb="go build"
-alias copymysshkey='pbcopy < ~/.ssh/id_rsa.pub'
-alias deletebranch="git branch -d"
-alias deleteremotebranch="git push -u origin"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias ds="cd ~/Sites"
+
 alias deploy="npm run deploy"
 alias start="npm run start"
 alias gc="git commit -m"
 alias ga="git add ."
 alias gp="git push"
-alias gpdev="gp origin-aws HEAD:develop"
-alias gcache='git rm -r --cached .'
-alias gclean='git remote prune origin'
-alias gcommit="git commit"
-alias gfix="git commit --amend"
 alias gfixignore="git rm -r --cached . && git add ."
 alias gitignorevim="git ls-files | grep '\.swp$' | xargs git rm"
 alias gprune='git remote prune origin'
@@ -87,87 +79,6 @@ alias whatismyip='curl ipecho.net/plain; echo'
 # Bash
 alias findstring='grep -rnw' 
 
-# csvkit
-alias csvcount='csvstat --count'
-alias csvshowallcolumns='csvcut -n'
-alias csvshowcolumns='csvcut -c'
-
-# Docker
-alias dm='docker-machine'
-alias dmls='docker-machine ls'
-alias dockerpsall='docker ps -a --format=$FORMAT'
-alias dockerpsrecent='docker ps -l --format=$FORMAT'
-alias dockerrunml4t='docker run -it -v "$(pwd)":/app cs7646'
-
-# Heroku
-alias addherokuremote='heroku git:remote -a'
-alias herokuthrive='heroku apps --org thriveministry'
-alias herokulunamisoo='heroku apps --org lunamisoo'
-alias ha='heroku accounts'
-alias haccountset='heroku accounts:set'
-alias haddremote='heroku git:remote -a'
-alias hc='heroku create'
-alias hcheck='curl https://status.heroku.com/api/v3/current-status.json'
-alias hconfig='heroku config'
-alias hconnectdemo='heroku addons:create herokuconnect:demo'
-alias hconnectstatus='heroku connect:status -a thriveministry'
-alias hconsole='heroku run rails console'
-alias hdbm='heroku run rake db:migrate'
-alias hhobbypostgres='heroku addons:create heroku-postgresql:hobby-dev'
-alias hlocal='heroku local'
-alias hlogin='heroku login'
-alias hlogs='heroku logs --t'
-alias hlogspg='heroku logs --tail --ps postgres --app thriveministry'
-alias hlogsredis='heroku logs -p heroku-redis -t'
-alias hlogsworker='heroku logs --ps worker'
-alias hmon='heroku maintenance:on'
-alias hmoff='heroku maintenance:off'
-alias hmixectomigrate='heroku run mix ecto.migrate'
-alias hopen='heroku open'
-alias hproduction='git push production master'
-alias hpush='git push heroku master'
-alias hps='heroku ps'
-alias hredis='heroku redis:info'
-alias hstaging='git push staging master'
-alias productionhmon='heroku maintenance:on --app'
-alias productionhmoff='heroku maintenance:off --app'
-
-# NPM
-alias npmis='npm install --save'
-alias npmisd='npm install --save-dev'
-alias npmbootstrap='npm install bootstrap'
-alias npmgulp="sudo npm install -g gulp"
-alias npmgulpl="npm install --save-dev gulp"
-alias npmi="npm init"
-
-# React
-alias cra="create-react-app"
-alias createreact="create-react-app"
-
-# React Native
-alias rnativeios="react-native run-ios"
-alias rnative="react-native"
-alias createreactnative="create-react-native-app"
-
-# Redis
-alias redis='redis-cli'
-alias rediss='redis-server'
-
-# Tmux Session Start
-alias tmx="tmux new -s"
-alias tmxc="vim ~/.tmux.conf"
-alias tmxa="tmux attach"
-alias tmxk='tmux kill-session -t'
-alias tmxl="tmux ls"
-
-# Tmuxinator
-alias tmxn='tmuxinator new'
-alias tmxo='tmuxinator open'
-alias tmxs='tmuxinator start'
-alias tmxthrive='tmuxinator start Thrive'
-
-# Yarn
-alias yga='yarn global add'
 
 # Exports
 export ZSH=$HOME/.oh-my-zsh
@@ -176,4 +87,5 @@ export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 export PATH="$(brew --prefix)/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
